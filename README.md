@@ -2,6 +2,9 @@
 
 ### Cara Install
 
+#### install Nodejs
+untuk caranya bisa lihat [disini](https://nodejs.org/en/docs)
+
 #### install ReactNative
 untuk caranya bisa lihat [disini](https://reactnative.dev/docs/environment-setup)
 
