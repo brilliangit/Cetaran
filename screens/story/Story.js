@@ -4,20 +4,17 @@ import ListWithimage from '../../components/list/ListWithimage'
 import { Image } from 'react-native-elements'
 const BASE_URI = 'https://source.unsplash.com/random?sig=';
 function Story({ navigation }) {
-
     return (
         <View style={styles.container}>
             <View
-                style={{ height: 200, width: '100%' }}
+                style={{ height: 200, width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
             >
                 <Image
                     source={require('../../assets/img/Logo.png')}
                     containerStyle={styles.item}
                     PlaceholderContent={<ActivityIndicator />}
                 />
-
             </View>
-
             <ListWithimage navigation={navigation} />
         </View>
     )
@@ -25,7 +22,7 @@ function Story({ navigation }) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#ccc'
+        backgroundColor: '#fff'
     },
     list: {
         width: '100%',

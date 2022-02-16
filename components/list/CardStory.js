@@ -1,15 +1,13 @@
 import React from 'react'
 import { View, Text, Image } from 'react-native'
-import { Card, ListItem, Button, Icon } from 'react-native-elements'
+import { Card, Button } from 'react-native-elements'
+import ImageColection from '../../assets/imageCollection'
 
-const users = [
-    {
-        name: 'brynn',
-        avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
-    },
-]
-
-const CardStory = () => {
+const CardStory = ({ data, navigation }) => {
+    const { image, title, location } = data
+    const showDetail = (dt) => {
+        navigation.navigate('story-detail', { data: data })
+    }
     return (
         <Card>
             <View
@@ -19,18 +17,18 @@ const CardStory = () => {
                     style={{
                         height: '100%', width: '100%'
                     }}
-                    source={require('../../assets/img/content/keongmas.png')}
+                    source={ImageColection[image]}
                 />
 
             </View>
-            <Text style={{ marginBottom: 10 }}>
-                Malin Kundang
+            <Text style={{ marginBottom: 10, marginTop: 10, fontSize: 16, fontWeight: 'bold', color: '#333333' }}>
+                {title}
             </Text>
-            <Text style={{ marginBottom: 10 }}>
-                dfhgdksjglfdgdfjm dfhgkfddfjg dfgkldfsgjfdklsgnfd...
+            <Text style={{ marginBottom: 10, fontSize: 12 }}>
+                {location}
             </Text>
             <Button
-                // icon={<Icon name='code' color='#ffffff' />}
+                onPress={() => showDetail(data)}
                 buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
                 title='Baca Cerita' />
         </Card>

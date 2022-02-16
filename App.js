@@ -8,17 +8,8 @@
 
 import React from 'react';
 import {
-  SafeAreaView,
   StyleSheet,
-  Text,
 } from 'react-native';
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -27,6 +18,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import Story from './screens/story/Story'
 import StoryList from './screens/story/StoryList'
+import StoryDetail from './screens/story/StoryDetail'
 import Qna from './screens/qna/Qna'
 
 const Stack = createNativeStackNavigator();
@@ -45,7 +37,14 @@ const Routes = () => {
             name="story-list"
             component={StoryList}
             options={{ title: 'Daftar Cerita' }} />
-          <Stack.Screen name="QnA" component={Qna} />
+          <Stack.Screen
+            name="story-detail"
+            component={StoryDetail}
+            options={{ title: 'Dongeng' }} />
+          <Stack.Screen
+            name="qna"
+            component={Qna}
+            options={{ title: 'Latihan Soal' }} />
         </Stack.Navigator>
       </SafeAreaProvider>
     </NavigationContainer>
