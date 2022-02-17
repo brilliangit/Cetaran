@@ -1,8 +1,8 @@
 import React from 'react'
-import { View, Text, StyleSheet, ActivityIndicator, FlatList } from 'react-native'
+import { View, StyleSheet, ActivityIndicator } from 'react-native'
 import ListWithimage from '../../components/list/ListWithimage'
 import { Image } from 'react-native-elements'
-const BASE_URI = 'https://source.unsplash.com/random?sig=';
+
 function Story({ navigation }) {
     return (
         <View style={styles.container}>
